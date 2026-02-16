@@ -1,0 +1,938 @@
+{
+  "categories": {
+    "-Ol_1MqZG1f5lrEZ-8dA": {
+      "available": true,
+      "createdAt": 1771221646800,
+      "name": "الشاورما"
+    },
+    "-OlbFRAfmmDfaqUtLRxI": {
+      "available": true,
+      "createdAt": 1771258888842,
+      "name": "المشاوي"
+    },
+    "-OlbFU1efK8WiPb-GtJK": {
+      "available": true,
+      "createdAt": 1771258900553,
+      "name": "سندوتشات غربي"
+    },
+    "-OlbwSJ4iw71ML1ob33p": {
+      "available": true,
+      "createdAt": 1771270427793,
+      "name": "البيتزا"
+    },
+    "-OlbwWb9o8dEEGLtcYsC": {
+      "available": true,
+      "createdAt": 1771270445400,
+      "name": "شيبسي"
+    },
+    "-Olbwhqu1IZ8E-uRUJS7": {
+      "available": true,
+      "createdAt": 1771270495560,
+      "name": "السلطات"
+    },
+    "-OlbwjSeLd6XjVYq9d1q": {
+      "available": true,
+      "createdAt": 1771270502136,
+      "name": "الحلويات"
+    },
+    "-OlbwlCPn5zUpkGl2eEH": {
+      "available": true,
+      "createdAt": 1771270509288,
+      "name": "المشروبات الباردة"
+    },
+    "-OlbwnlmwJ8fcMFueWbQ": {
+      "available": true,
+      "createdAt": 1771270519808,
+      "name": "المشروبات الساخنة"
+    }
+  },
+  "items": {
+    "-Ol_1QZBL2IMfOHMcKnI": {
+      "categoryId": "-Ol_1MqZG1f5lrEZ-8dA",
+      "createdAt": 1771221662009,
+      "image": "",
+      "ingredients": "",
+      "name": "فرشوحة شاورما عادي",
+      "price": "20",
+      "priceTw": "",
+      "star": false,
+      "visible": true
+    },
+    "-OlbDw7yWAJt1mxHdOD1": {
+      "categoryId": "-Ol_1MqZG1f5lrEZ-8dA",
+      "createdAt": 1771258495451,
+      "image": "",
+      "ingredients": "",
+      "name": "فرشوحة شاورما دبل ",
+      "price": "22",
+      "priceTw": "",
+      "star": false,
+      "visible": true
+    },
+    "-OlbE4kRLCgeLyImaPVU": {
+      "categoryId": "-Ol_1MqZG1f5lrEZ-8dA",
+      "createdAt": 1771258534843,
+      "image": "",
+      "ingredients": "",
+      "name": "فرشوحة شاورما دبل دبل",
+      "price": "30",
+      "priceTw": "",
+      "star": false,
+      "visible": true
+    },
+    "-OlbE6cg46hn_Gy1oBaJ": {
+      "categoryId": "-Ol_1MqZG1f5lrEZ-8dA",
+      "createdAt": 1771258542539,
+      "image": "",
+      "ingredients": "",
+      "name": "فرشوحة شاورما دبل لحمة",
+      "price": "30",
+      "priceTw": "",
+      "star": false,
+      "visible": true
+    },
+    "-OlbExUOr5ex63yiv3zz": {
+      "categoryId": "-Ol_1MqZG1f5lrEZ-8dA",
+      "createdAt": 1771258763128,
+      "image": "",
+      "ingredients": "",
+      "name": "سوري شاورما",
+      "price": "32",
+      "priceTw": "",
+      "star": false,
+      "visible": true
+    },
+    "-OlbF2JtmtBXvSwFnOqg": {
+      "categoryId": "-Ol_1MqZG1f5lrEZ-8dA",
+      "createdAt": 1771258787032,
+      "image": "",
+      "ingredients": "",
+      "name": "صفيحة شاورما",
+      "price": "35",
+      "star": false,
+      "visible": true
+    },
+    "-OlbFF4tzejuTtkebtwq": {
+      "categoryId": "-Ol_1MqZG1f5lrEZ-8dA",
+      "createdAt": 1771258839320,
+      "image": "",
+      "ingredients": "",
+      "name": "شاورما أساور",
+      "price": "35",
+      "star": false,
+      "visible": true
+    },
+    "-OlbFYJv88JZuf38P2Gq": {
+      "categoryId": "-OlbFRAfmmDfaqUtLRxI",
+      "createdAt": 1771258918106,
+      "image": "",
+      "ingredients": "",
+      "name": "وجبة مشاوي",
+      "price": "45",
+      "star": false,
+      "visible": true
+    },
+    "-OlbFq3KWYKj_9o9wv5x": {
+      "categoryId": "-OlbFRAfmmDfaqUtLRxI",
+      "createdAt": 1771258994868,
+      "image": "",
+      "ingredients": "",
+      "name": "شيش طاووق",
+      "price": "40",
+      "star": false,
+      "visible": true
+    },
+    "-OlbFtSaxjL3ONncXbpB": {
+      "categoryId": "-OlbFRAfmmDfaqUtLRxI",
+      "createdAt": 1771259008773,
+      "image": "",
+      "ingredients": "",
+      "name": "وجبة كباب",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbFy3_z-IIoyOSvDGC": {
+      "categoryId": "-OlbFRAfmmDfaqUtLRxI",
+      "createdAt": 1771259027668,
+      "image": "",
+      "ingredients": "",
+      "name": "وجبة مسحب",
+      "price": "40",
+      "star": false,
+      "visible": true
+    },
+    "-OlbG2CymYLC0vDTIZhH": {
+      "categoryId": "-OlbFRAfmmDfaqUtLRxI",
+      "createdAt": 1771259048749,
+      "image": "",
+      "ingredients": "",
+      "name": "سبايسي",
+      "price": "40",
+      "star": false,
+      "visible": true
+    },
+    "-OlbG93LJ4t_Kg1l7p9U": {
+      "categoryId": "-OlbFRAfmmDfaqUtLRxI",
+      "createdAt": 1771259076805,
+      "image": "",
+      "ingredients": "",
+      "name": "وجبة التايلندي",
+      "price": "35",
+      "star": false,
+      "visible": true
+    },
+    "-OlbGCpDpHzA2b8oT0s8": {
+      "categoryId": "-OlbFRAfmmDfaqUtLRxI",
+      "createdAt": 1771259092221,
+      "image": "",
+      "ingredients": "",
+      "name": "دجاج + أرز",
+      "price": "60",
+      "star": false,
+      "visible": true
+    },
+    "-OlbGGZjiVwhJao8lJOq": {
+      "categoryId": "-OlbFRAfmmDfaqUtLRxI",
+      "createdAt": 1771259107550,
+      "image": "",
+      "ingredients": "",
+      "name": "فرايد تشيكن",
+      "price": "45",
+      "star": false,
+      "visible": true
+    },
+    "-OlbGqDWfC0H2sHDXPiB": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259257680,
+      "image": "",
+      "ingredients": "",
+      "name": "تشيكن ستريجنوف",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbGscNFnniNmC5fel3": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259267527,
+      "image": "",
+      "ingredients": "",
+      "name": "تشيكن بيتزا",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbGvKcGARGcS2TDUW9": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259278615,
+      "image": "",
+      "ingredients": "",
+      "name": "فاهيتا دجاج",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbH-yt85Iyu3mB-6jC": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259301736,
+      "image": "",
+      "ingredients": "",
+      "name": "دجاج بالذرة",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbH8-djbvW3jI_0nGt": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259334616,
+      "image": "",
+      "ingredients": "",
+      "name": "اسكالوب بانيه - بالجبن",
+      "price": "25,30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbHHD9yjN9bvfoUElm": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259372345,
+      "image": "",
+      "ingredients": "",
+      "name": "فرايد تشيكن",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbHOeHYfiN1wX1F_B2": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259402817,
+      "image": "",
+      "ingredients": "",
+      "name": "اسكلوبيني",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbHU7vCNm4bKdBiK_4": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259425258,
+      "image": "",
+      "ingredients": "",
+      "name": "بيف برجر - بالجبنة",
+      "price": "30,35",
+      "star": false,
+      "visible": true
+    },
+    "-OlbHYHvRcNRLFS1Te_7": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259442282,
+      "image": "",
+      "ingredients": "",
+      "name": "سماش برجر",
+      "price": "50",
+      "star": false,
+      "visible": true
+    },
+    "-OlbHbpnGHq3X3cESu1f": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259460898,
+      "image": "",
+      "ingredients": "",
+      "name": "سوري زنجر",
+      "price": "35",
+      "star": false,
+      "visible": true
+    },
+    "-OlbIetEfgMvfTM5V0yl": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259735550,
+      "image": "",
+      "ingredients": "",
+      "name": "سوري مسحب",
+      "price": "35",
+      "star": false,
+      "visible": true
+    },
+    "-OlbIhojkAr3iRXUDVsD": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259747550,
+      "image": "",
+      "ingredients": "",
+      "name": "الفطيرة الذهبية",
+      "price": "35",
+      "star": false,
+      "visible": true
+    },
+    "-OlbImTbSklXmQP6NWz_": {
+      "categoryId": "-OlbFU1efK8WiPb-GtJK",
+      "createdAt": 1771259766614,
+      "image": "",
+      "ingredients": "",
+      "name": "سوري مسحب بالباربكيو",
+      "price": "35",
+      "star": false,
+      "visible": true
+    },
+    "-Olbx2XAXBaEIrXfLGh9": {
+      "categoryId": "-OlbwSJ4iw71ML1ob33p",
+      "createdAt": 1771270584345,
+      "image": "",
+      "ingredients": "",
+      "name": "بيتزا دجاج وسط",
+      "price": "25",
+      "star": false,
+      "visible": true
+    },
+    "-Olbx5qPeaaZBOgnomBs": {
+      "categoryId": "-OlbwSJ4iw71ML1ob33p",
+      "createdAt": 1771270597928,
+      "image": "",
+      "ingredients": "",
+      "name": "بيتزا لحمة وسط",
+      "price": "25",
+      "star": false,
+      "visible": true
+    },
+    "-Olbx9cfkiHlKJvzDU16": {
+      "categoryId": "-OlbwSJ4iw71ML1ob33p",
+      "createdAt": 1771270613432,
+      "image": "",
+      "ingredients": "",
+      "name": "بيتزا شاورما وسط",
+      "price": "25",
+      "star": false,
+      "visible": true
+    },
+    "-OlbxC_e_oZlgzCzNmIH": {
+      "categoryId": "-OlbwSJ4iw71ML1ob33p",
+      "createdAt": 1771270625528,
+      "image": "",
+      "ingredients": "",
+      "name": "بيتزا بالذرة",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-OlbxGAP-aNGrxMDYmbY": {
+      "categoryId": "-OlbwSJ4iw71ML1ob33p",
+      "createdAt": 1771270640232,
+      "image": "",
+      "ingredients": "",
+      "name": "بيتزا بالخضار",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-OlbxW5mOOBZCYOmzd9c": {
+      "categoryId": "-OlbwSJ4iw71ML1ob33p",
+      "createdAt": 1771270705472,
+      "image": "",
+      "ingredients": "",
+      "name": "بيتزا مارجريتا",
+      "price": "18",
+      "star": false,
+      "visible": true
+    },
+    "-Olbx_NfwGBulY8NWast": {
+      "categoryId": "-OlbwSJ4iw71ML1ob33p",
+      "createdAt": 1771270723001,
+      "image": "",
+      "ingredients": "",
+      "name": "بيتزا بالتونة",
+      "price": "22",
+      "star": false,
+      "visible": true
+    },
+    "-OlbxdivqVDysV9BfAZ1": {
+      "categoryId": "-OlbwSJ4iw71ML1ob33p",
+      "createdAt": 1771270740809,
+      "image": "",
+      "ingredients": "",
+      "name": "كاليزوني دجاج",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbxkbIv0CI31aGRbv1": {
+      "categoryId": "-OlbwWb9o8dEEGLtcYsC",
+      "createdAt": 1771270768992,
+      "image": "",
+      "ingredients": "",
+      "name": "صحن شيبسي كبير",
+      "price": "10",
+      "star": false,
+      "visible": true
+    },
+    "-Olbxo4HzoT-0oq-agRJ": {
+      "categoryId": "-OlbwWb9o8dEEGLtcYsC",
+      "createdAt": 1771270783200,
+      "image": "",
+      "ingredients": "",
+      "name": "صحن شيبسي صغير",
+      "price": "5",
+      "star": false,
+      "visible": true
+    },
+    "-OlbxvMHltRsnsCLUWOy": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270813024,
+      "image": "",
+      "ingredients": "",
+      "name": "ذرة بالمايونيز",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-OlbxxRekUsbRsuGQXLc": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270821560,
+      "image": "",
+      "ingredients": "",
+      "name": "ملفوف",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-OlbxzkLlxjjb0-uHOHb": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270831012,
+      "image": "",
+      "ingredients": "",
+      "name": "تركية",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-Olby0cPtF41sGiaqGqQ": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270838696,
+      "image": "",
+      "ingredients": "",
+      "name": "حمص",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-Olby3t9MUDkF1E9HZuz": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270852056,
+      "image": "",
+      "ingredients": "",
+      "name": "بيكانتي",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-Olby6qm5BxfrhMmQ85H": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270864192,
+      "image": "",
+      "ingredients": "",
+      "name": "متومة",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-Olby9ruMuXtswQHnrqq": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270876552,
+      "image": "",
+      "ingredients": "",
+      "name": "بقدونسية",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-OlbyH3uSdDVdVBgkmv_": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270906056,
+      "image": "",
+      "ingredients": "",
+      "name": "درام كندية",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-OlbyMwuuly5o75oxVm7": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270930120,
+      "image": "",
+      "ingredients": "",
+      "name": "ملفوف أبيض",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-OlbyPJHuTXr3ItDACmt": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270939808,
+      "image": "",
+      "ingredients": "",
+      "name": "سلطة خضار",
+      "price": "8",
+      "star": false,
+      "visible": true
+    },
+    "-OlbyT6PNzdve_XqFwzE": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270955368,
+      "image": "",
+      "ingredients": "",
+      "name": "سلطة غزاوية",
+      "price": "8",
+      "star": false,
+      "visible": true
+    },
+    "-OlbyWu1TMXDyLskIgY8": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1771270970896,
+      "image": "",
+      "ingredients": "",
+      "name": "بابا غنوج",
+      "price": "5,10",
+      "star": false,
+      "visible": true
+    },
+    "-OlbyqlPpnFxhT3EUpXV": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271056360,
+      "image": "",
+      "ingredients": "",
+      "name": "كزدورة - Pro",
+      "price": "30,35",
+      "star": false,
+      "visible": true
+    },
+    "-Olbyu6Hrv-OyU6PDKr7": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271070048,
+      "image": "",
+      "ingredients": "",
+      "name": "Seven",
+      "price": "55",
+      "star": false,
+      "visible": true
+    },
+    "-Olbz-a8KpQxNGDuuPGZ": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271096599,
+      "image": "",
+      "ingredients": "",
+      "name": "كريب كلاسيك",
+      "price": "28",
+      "star": false,
+      "visible": true
+    },
+    "-Olbz69mpEyVAhVMz861": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271123520,
+      "image": "",
+      "ingredients": "",
+      "name": "كريب اسبشيل",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzBLnpWQ3EJQdDo-v": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271144769,
+      "image": "",
+      "ingredients": "",
+      "name": "وافل كلاسيك",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzGyIYJuJTW9KKGg5": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271167777,
+      "image": "",
+      "ingredients": "",
+      "name": "وافل اسبشسل",
+      "price": "35",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzK7H8V6GWNRYZs9o": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271180704,
+      "image": "",
+      "ingredients": "",
+      "name": "لقيمات كلاسيك",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzOLXukhvcG9FS5Zb": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271198000,
+      "image": "",
+      "ingredients": "",
+      "name": "لقيمات اسبشيل",
+      "price": "35",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzSG9l4Wh9r25hq8i": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271214040,
+      "image": "",
+      "ingredients": "",
+      "name": "مكس حلويات التايلندي",
+      "price": "50",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzV5PtKyCly1N45aN": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271225640,
+      "image": "",
+      "ingredients": "",
+      "name": "تشيز كيك",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzYCXEpwRqfaoausY": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271238384,
+      "image": "",
+      "ingredients": "",
+      "name": "باونتي كيك",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzbhNpbrzZdBbHjfQ": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271256806,
+      "image": "",
+      "ingredients": "",
+      "name": "حلا البستاشيو",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzeuP31fH5rdh3iKP": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271269928,
+      "image": "",
+      "ingredients": "",
+      "name": "حلا اللوتس",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzfhvYB2u-F3_TxAE": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271273224,
+      "image": "",
+      "ingredients": "",
+      "name": "حلا اللوتس",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzkZvcc7RKvp4rg-J": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271293129,
+      "image": "",
+      "ingredients": "",
+      "name": "كنافة أيس كريم",
+      "price": "25",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzpB18rOQRrfWrYwm": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271312016,
+      "image": "",
+      "ingredients": "",
+      "name": "كريب فوتتشيني",
+      "price": "28",
+      "star": false,
+      "visible": true
+    },
+    "-OlbztsXYyEQ00A4D50N": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271331248,
+      "image": "",
+      "ingredients": "",
+      "name": "بامبيلا",
+      "price": "30",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzwVGGMWuFK40CS9Y": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271341983,
+      "image": "",
+      "ingredients": "",
+      "name": "كريب دبي",
+      "price": "40",
+      "star": false,
+      "visible": true
+    },
+    "-OlbzzRXaJwbVP-WFrp9": {
+      "categoryId": "-OlbwjSeLd6XjVYq9d1q",
+      "createdAt": 1771271354032,
+      "image": "",
+      "ingredients": "",
+      "name": "بلاك فورست",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-Olc2yIYi9d86QpEWYOY": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272398984,
+      "image": "",
+      "ingredients": "",
+      "name": "كوكاكولا بأنواعها",
+      "price": "5",
+      "star": false,
+      "visible": true
+    },
+    "-Olc30xQIOJjBhl3ptHX": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272413952,
+      "image": "",
+      "ingredients": "",
+      "name": "عصائر طبيعية",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-Olc35PvCPiSRQ9NvpI8": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272432224,
+      "image": "",
+      "ingredients": "",
+      "name": "ميلك شيك",
+      "price": "25",
+      "star": false,
+      "visible": true
+    },
+    "-Olc39pn71S_2hGhM3uG": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272450328,
+      "image": "",
+      "ingredients": "",
+      "name": "ايس كريم",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3DgAKHIe2BaZKhcr": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272466096,
+      "image": "",
+      "ingredients": "",
+      "name": "أفوكادو بالمكسرات",
+      "price": "25",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3GRQ6ufK2nztSnji": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272477376,
+      "image": "",
+      "ingredients": "",
+      "name": "ايس لاتيه",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3JIQBvJ3fhPFzHOY": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272489088,
+      "image": "",
+      "ingredients": "",
+      "name": "ايس موكا",
+      "price": "20",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3Nw2nviX3KJv7ymR": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272508072,
+      "image": "",
+      "ingredients": "",
+      "name": "ايس سبانيش لاتيه",
+      "price": "25",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3QznD_GgV0Jq_e-L": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272520600,
+      "image": "",
+      "ingredients": "",
+      "name": "مياه كبيرة",
+      "price": "8",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3TGnrYaLnn4qsXjd": {
+      "categoryId": "-OlbwlCPn5zUpkGl2eEH",
+      "createdAt": 1771272529944,
+      "image": "",
+      "ingredients": "",
+      "name": "مياه صغيرة",
+      "price": "3",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3kgXIlleVGPLmWM0": {
+      "categoryId": "-OlbwnlmwJ8fcMFueWbQ",
+      "createdAt": 1771272604311,
+      "image": "",
+      "ingredients": "",
+      "name": "قهوة تركي",
+      "price": "5",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3pYAc9FkwHVD4bBj": {
+      "categoryId": "-OlbwnlmwJ8fcMFueWbQ",
+      "createdAt": 1771272624192,
+      "image": "",
+      "ingredients": "",
+      "name": "قهوة اسبريسو",
+      "price": "7",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3rZ2zNmOB1OOvUth": {
+      "categoryId": "-OlbwnlmwJ8fcMFueWbQ",
+      "createdAt": 1771272632440,
+      "image": "",
+      "ingredients": "",
+      "name": "شاي",
+      "price": "4",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3viI3GBPzgebdHzR": {
+      "categoryId": "-OlbwnlmwJ8fcMFueWbQ",
+      "createdAt": 1771272649480,
+      "image": "",
+      "ingredients": "",
+      "name": "نسكافيه",
+      "price": "8",
+      "star": false,
+      "visible": true
+    },
+    "-Olc3yPQDEbrXP1FuAMX": {
+      "categoryId": "-OlbwnlmwJ8fcMFueWbQ",
+      "createdAt": 1771272660496,
+      "image": "",
+      "ingredients": "",
+      "name": "كابتشينو",
+      "price": "8",
+      "star": false,
+      "visible": true
+    },
+    "-Olc40oAS-RlIKlgnWtK": {
+      "categoryId": "-OlbwnlmwJ8fcMFueWbQ",
+      "createdAt": 1771272674432,
+      "image": "",
+      "ingredients": "",
+      "name": "نوتيلا كافيه",
+      "price": "15",
+      "star": false,
+      "visible": true
+    },
+    "-Olc44p2TJ44XVYDMLom": {
+      "categoryId": "-OlbwnlmwJ8fcMFueWbQ",
+      "createdAt": 1771272690872,
+      "image": "",
+      "ingredients": "",
+      "name": "هوت شوكلت",
+      "price": "15",
+      "star": false,
+      "visible": true
+    }
+  },
+  "settings": {
+    "orderSystem": false,
+    "orderSettings": {
+      "inRestaurant": false,
+      "takeaway": false,
+      "inPhone": "",
+      "outPhone": ""
+    },
+    "complaintsWhatsapp": "",
+    "footerInfo": {
+      "address": "تقاطع شارع الوحدة مع شارع الثورة",
+      "phone": "059xxxxxxx",
+      "whatsapp": "0097259xxxxxxx",
+      "facebook": "www.facebook.com",
+      "instagram": "www.instagram.com",
+      "tiktok": "www.tiktok.com"
+    }
+  },
+  "meta": {
+    "version": "1.0",
+    "exportedAt": 1771272696754
+  }
+}
