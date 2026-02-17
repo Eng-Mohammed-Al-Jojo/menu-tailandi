@@ -431,7 +431,7 @@ export default function Admin() {
   // ================= LOGIN UI =================
   if (!authOk) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#231F20]" dir="rtl">
+      <div className="min-h-screen flex items-center justify-center bg-[#F7F3E8]" dir="rtl">
         {toast && (
           <div className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 bg-[#60340e] text-white px-6 py-3 rounded-xl shadow-lg transition-all">
             {toast}
@@ -439,7 +439,7 @@ export default function Admin() {
         )}
         {/* POPUP إعادة تعيين كلمة المرور */}
         {resetPasswordPopup && (
-          <div className="fixed inset-0 bg-[#231F20]/80 flex justify-center items-center z-50 ">
+          <div className="fixed inset-0 bg-[#F7F3E8] flex justify-center items-center z-50 ">
             <div className="bg-white rounded-3xl shadow-2xl p-6 w-full max-w-sm border-4 border-[#60340e]">
               {/* الشعار */}
               <div className="flex justify-center mb-4">
@@ -530,7 +530,7 @@ export default function Admin() {
 
   // ================= ADMIN PANEL =================
   return (
-    <div className="min-h-screen w-full bg-[#F5F5DC] flex justify-center py-5 md:p-6" dir="rtl">
+    <div className="min-h-screen w-full bg-[#F7F3E8] flex justify-center py-5 md:p-6" dir="rtl">
       {toast && (
         <div className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 bg-[#723901] text-white px-6 py-3 rounded-xl shadow-lg transition-all">
           {toast}

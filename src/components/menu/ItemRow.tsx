@@ -29,7 +29,7 @@ export default function ItemRow({ item, orderSystem }: Props) {
         relative
         rounded-2xl
         p-3 md:p-4
-        bg-[#F5F5DC]
+        bg-[#F7F3E8]
         border border-[#60340e]/40
         shadow-[0_12px_35px_rgba(96,52,14,0.25)]
         transition-all duration-300

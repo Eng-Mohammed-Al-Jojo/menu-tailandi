@@ -13,7 +13,7 @@ export default function MenuPage() {
   return (
     <div
       dir="rtl"
-      className="min-h-screen flex flex-col bg-[#F5F5DC] text-[#080903] font-[Cairo] relative"
+      className="min-h-screen flex flex-col bg-[#F7F3E8] text-[#080903] font-[Cairo]"
     >
       {/* Overlay */}
       <div className="absolute inset-0 opacity-50 md:backdrop-blur-sm pointer-events-none"></div>

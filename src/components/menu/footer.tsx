@@ -123,7 +123,7 @@ export default function Footer() {
                       bg-[#F7F3E8] text-[#60340e]
                       hover:scale-110
                       hover: shadow-white
-                      shadow-[0_0_25px_rgba(253,177,67,0.6)]
+                      shadow-[0_0_25px_rgba(253,100,67,0.6)]
                       transition-all duration-300
                     "
                   >

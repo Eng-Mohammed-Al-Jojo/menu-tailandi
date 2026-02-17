@@ -232,9 +232,9 @@ export default function Menu({ onLoadingChange, onFeaturedCheck }: Props) {
   if (loading) {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center ">
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-xl" />
+        <div className="absolute inset-0 bg-[#F7F3E8] backdrop-blur-xl" />
 
-        <div className="relative z-10 flex flex-col items-center px-12 py-14 rounded-[3rem] bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_80px_rgba(253,177,67,0.25)]">
+        <div className="relative z-10 flex flex-col items-center px-12 py-14 rounded-[3rem] bg-white/10 backdrop-blur-xl border border-white/20 shadow-[0_0_80px_rgba(253,100,67,0.25)]">
           <div className="absolute -inset-8 rounded-[4rem] bg-[#FDB143]/10 blur-3xl animate-pulse" />
 
           <div className="relative w-48 h-48 mb-10">
@@ -245,13 +245,13 @@ export default function Menu({ onLoadingChange, onFeaturedCheck }: Props) {
             />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-extrabold tracking-widest text-[#F7F3E8]">
+          <h2 className="text-3xl md:text-4xl font-extrabold tracking-widest text-[#60340e]">
             مطعم التايلندي
           </h2>
 
           <div className="w-24 h-[2px] bg-[#60340e]/70 rounded-full my-5" />
 
-          <p className="text-[#F7F3E8]/70 text-lg font-[Cairo] text-center">
+          <p className="text-[#60340e] text-lg font-[Cairo] text-center">
             نكهات تعود .. ذكريات تتجدد
           </p>
         </div>
