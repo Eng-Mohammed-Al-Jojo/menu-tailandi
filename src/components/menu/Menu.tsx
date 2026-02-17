@@ -273,19 +273,22 @@ export default function Menu({ onLoadingChange, onFeaturedCheck }: Props) {
       )}
 
       {/* ===== Tabs الأقسام ===== */}
-      <div className="top-0 z-30 bg-inherit py-3">
-        <div className="flex gap-4 px-4 items-center justify-center flex-wrap">
+      <div className="top-0 z-30 bg-inherit py-2">
+        <div className="flex gap-2 sm:gap-3 px-3 items-center justify-center flex-wrap">
 
           {/* زر عرض الكل */}
           <button
             onClick={() => setActiveCatId("all")}
             className={`
-        px-5 py-2 rounded-full whitespace-nowrap
-        font-bold text-base md:text-lg
-        border transition-colors duration-300 ease-out
+        px-3 sm:px-4
+        py-1.5 sm:py-2
+        rounded-full whitespace-nowrap
+        font-semibold
+        text-xs sm:text-sm md:text-base
+        border transition-all duration-200 ease-out
         ${activeCatId === "all"
-                ? "bg-[#60340e] text-white border-[#60340e] shadow-md"
-                : "bg-transparent text-[#60340e] border-[#60340e] hover:bg-[#60340e]/10"}
+                ? "bg-[#60340e] text-white border-[#60340e] shadow-sm "
+                : "bg-transparent text-[#60340e] border-[#60340e]/70 hover:bg-[#60340e]/10"}
       `}
           >
             الكل
@@ -303,12 +306,15 @@ export default function Menu({ onLoadingChange, onFeaturedCheck }: Props) {
                 key={cat.id}
                 onClick={() => setActiveCatId(cat.id)}
                 className={`
-            px-5 py-2 rounded-full whitespace-nowrap
-            font-bold text-base md:text-lg
-            border transition-colors duration-300 ease-out
+            px-3 sm:px-4
+            py-1.5 sm:py-2
+            rounded-full whitespace-nowrap
+            font-semibold
+            text-xs sm:text-sm md:text-base
+            border transition-all duration-200 ease-out
             ${isActive
-                    ? "bg-[#60340e] text-white border-[#60340e] shadow-md"
-                    : "bg-transparent text-[#60340e] border-[#60340e] hover:bg-[#60340e]/10"}
+                    ? "bg-[#60340e] text-white border-[#60340e] shadow-sm"
+                    : "bg-transparent text-[#60340e] border-[#60340e]/70 hover:bg-[#60340e]/10"}
           `}
               >
                 {cat.name}
@@ -317,6 +323,7 @@ export default function Menu({ onLoadingChange, onFeaturedCheck }: Props) {
           })}
         </div>
       </div>
+
       {/* ===== Separator فخم ===== */}
       <div className="flex items-center justify-center my-8">
 

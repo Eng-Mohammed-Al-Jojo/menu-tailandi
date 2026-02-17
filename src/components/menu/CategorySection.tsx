@@ -16,7 +16,7 @@ export default function CategorySection({ category, items, orderSystem }: Props)
         <div
           className="
             relative
-            w-full max-w-[1600px]  /* أعرض ما يمكن مع تحديد حد أقصى */
+            w-full max-w-full  /* أعرض ما يمكن مع تحديد حد أقصى */
             px-10 py-4
             rounded-2xl
             bg-[#60340e]
@@ -32,7 +32,7 @@ export default function CategorySection({ category, items, orderSystem }: Props)
               font-[Cairo]
               font-black
               text-[#F5F5DC]
-              text-2xl md:text-4xl
+              text-lg md:text-3xl
               tracking-widest
               text-center
             "
@@ -43,7 +43,7 @@ export default function CategorySection({ category, items, orderSystem }: Props)
       </div>
 
       {/* ===== Items ===== */}
-      <div className="flex flex-col gap-5 w-full max-w-[1600px] mx-auto">
+      <div className="flex flex-col gap-2 w-full max-w-full mx-auto">
         {items.map((item) => (
           <ItemRow
             key={item.id}

@@ -21,25 +21,40 @@ export default function MenuPage() {
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
         {/* Logo مع زخارف جانبية */}
-        <div className="flex justify-center items-center py-10 relative">
+        <div className="flex items-center w-full py-10 px-1">
 
           {/* زخرفة يسار */}
-          <div className="absolute left-0 w-32 md:w-48 h-2 md:h-3 bg-linear-to-r from-[#723901] via-[#723901] to-[#F5F5DC] rounded-full shadow-lg"></div>
+          <div className="
+            grow
+            h-4 md:h-5
+            bg-linear-to-r from-[#723901] via-[#723901] to-[#723901]
+            rounded-sm
+            shadow-lg
+          "></div>
 
           {/* اللوجو */}
           <img
             src="/logo.png"
             alt="Logo"
             className="
-      w-56 md:w-60 object-contain
-      drop-shadow-[0_10px_40px_rgba(114,57,1,0.35)]
-      animate-logo-float
-      relative z-10
-    "
+            mx-6
+            w-48 md:w-56
+            object-contain
+            drop-shadow-[0_10px_40px_rgba(114,57,1,0.35)]
+            animate-logo-float
+            z-10
+          "
           />
 
           {/* زخرفة يمين */}
-          <div className="absolute right-0 w-32 md:w-48 h-2 md:h-3 bg-linear-to-l from-[#723901] via-[#723901] to-[#F5F5DC] rounded-full shadow-lg"></div>
+          <div className="
+            grow
+            h-4 md:h-5
+            bg-linear-to-l from-[#723901] via-[#723901] to-[#723901]
+            rounded-sm
+            shadow-lg
+          "></div>
+
         </div>
 
 
