@@ -31,6 +31,20 @@ export default function Footer() {
     telegram: "",
   });
 
+  const normalizeUrl = (url?: string) => {
+    if (!url) return undefined;
+
+    const trimmed = url.trim();
+
+    if (
+      trimmed.startsWith("http://") ||
+      trimmed.startsWith("https://")
+    ) {
+      return trimmed;
+    }
+
+    return `https://${trimmed}`;
+  };
 
   useEffect(() => {
     /* ===== footerInfo ===== */
@@ -68,11 +82,13 @@ export default function Footer() {
         ? `https://wa.me/${footer.whatsapp}`
         : undefined,
     },
-    { Icon: FaInstagram, url: footer.instagram || undefined },
-    { Icon: FaFacebookF, url: footer.facebook || undefined },
-    { Icon: FaTiktok, url: footer.tiktok || undefined },
-    { Icon: FaTelegramPlane, url: footer.telegram || undefined },
+    { Icon: FaInstagram, url: normalizeUrl(footer.instagram) },
+    { Icon: FaFacebookF, url: normalizeUrl(footer.facebook) },
+    { Icon: FaTiktok, url: normalizeUrl(footer.tiktok) },
+    { Icon: FaTelegramPlane, url: normalizeUrl(footer.telegram) },
   ];
+
+
 
   return (
     <footer
