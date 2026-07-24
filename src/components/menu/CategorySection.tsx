@@ -9,31 +9,32 @@ interface Props {
 
 export default function CategorySection({ category, items, orderSystem }: Props) {
   return (
-    <section className="w-full px-4 md:px-0 py-8 flex flex-col">
-
-      {/* ===== Category Title ===== */}
-      <div className="flex justify-center mb-10">
+    <section className="w-full px-2 md:px-0 py-8 flex flex-col animate-category-enter">
+      {/* ===== Category Header ===== */}
+      <div className="flex justify-center mb-8">
         <div
           className="
             relative
-            w-full max-w-full  /* أعرض ما يمكن مع تحديد حد أقصى */
-            px-10 py-4
-            rounded-2xl
+            w-full max-w-full
+            px-8 py-3.5 md:py-4
+            rounded-xl
             bg-[#60340e]
-            shadow-[0_10px_30px_rgba(96,52,14,0.45)]
+            elevation-3
+            border border-[#C9A84C]/30
+            overflow-hidden
           "
         >
-          {/* زخرفة الكورنرات */}
-          <span className="absolute top-2 right-2 w-2 h-2 bg-[#F5F5DC] rotate-45" />
-          <span className="absolute bottom-2 left-2 w-2 h-2 bg-[#F5F5DC] rotate-45" />
+          {/* زخرفة الكورنرات الذهبية الناعمة */}
+          <span className="absolute top-2 right-2 w-1.5 h-1.5 bg-[#C9A84C] rotate-45 opacity-80" />
+          <span className="absolute bottom-2 left-2 w-1.5 h-1.5 bg-[#C9A84C] rotate-45 opacity-80" />
 
           <h2
             className="
               font-[Cairo]
-              font-black
-              text-[#F5F5DC]
-              text-lg md:text-3xl
-              tracking-widest
+              font-bold
+              text-[#F7F3E8]
+              text-lg md:text-2xl
+              tracking-wider
               text-center
             "
           >
@@ -42,17 +43,17 @@ export default function CategorySection({ category, items, orderSystem }: Props)
         </div>
       </div>
 
-      {/* ===== Items ===== */}
-      <div className="flex flex-col gap-2 w-full max-w-full mx-auto">
-        {items.map((item) => (
+      {/* ===== Items with Spacing & Staggered Animation ===== */}
+      <div className="flex flex-col gap-3 md:gap-4 w-full max-w-full mx-auto">
+        {items.map((item, index) => (
           <ItemRow
             key={item.id}
             item={item}
             orderSystem={orderSystem}
+            index={index}
           />
         ))}
       </div>
     </section>
   );
 }
-

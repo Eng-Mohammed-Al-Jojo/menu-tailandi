@@ -1,54 +1,48 @@
 import { type Item } from "./Menu";
-// import { useState } from "react";
-// import { useCart } from "../../context/CartContext";
-// import { FaCheck } from "react-icons/fa";
 
 interface Props {
   item: Item;
   orderSystem: boolean;
+  index?: number;
 }
 
-export default function ItemRow({ item, orderSystem }: Props) {
+export default function ItemRow({ item, orderSystem, index = 0 }: Props) {
   const prices = String(item.price).split(",");
   const unavailable = item.visible === false;
-
-  // const { addItem } = useCart();
-  // const [addedPrice, setAddedPrice] = useState<number | null>(null);
-
   const hasIngredients = !!item.ingredients;
 
-  // const handleAdd = (price: number) => {
-  //   addItem(item, price);
-  //   setAddedPrice(price);
-  //   setTimeout(() => setAddedPrice(null), 1200);
-  // };
+  // حساب التاخير الزمني للانيميشن المتتابع (Staggered Animation)
+  const animDelay = Math.min(index * 45, 350);
 
   return (
     <div
+      style={{ animationDelay: `${animDelay}ms` }}
       className={`
         relative
-        rounded-2xl
-        p-3 md:p-4
-        bg-[#F7F3E8]
-        border border-[#60340e]/40
-        shadow-[0_12px_35px_rgba(96,52,14,0.25)]
-        transition-all duration-300
-        ${unavailable ? "opacity-50" : "hover:-translate-y-1"}
+        rounded-xl
+        p-3.5 md:p-4.5
+        bg-[#FDFAF3]
+        border border-[#60340e]/15
+        elevation-2
+        hover:elevation-3
+        transition-all duration-200 ease-out
+        animate-item-enter
+        ${unavailable ? "opacity-50" : "hover:-translate-y-0.5"}
       `}
     >
-      {/* ===== Card Decoration (Side Accent) ===== */}
-      <span className="absolute top-2 bottom-2 right-1.5 w-[5px] bg-[#60340e]/70 rounded-full" />
+      {/* ===== Card Side Accent ===== */}
+      <span className="absolute top-3 bottom-3 right-1.5 w-1 bg-[#60340e]/70 rounded-full" />
 
-      <div className="flex items-center justify-between gap-6">
-
+      <div className="flex items-center justify-between gap-4 md:gap-6">
         {/* ===== Right Side: Name + Ingredients ===== */}
-        <div className="flex flex-col gap-2 flex-1 text-right pr-4">
+        <div className="flex flex-col gap-1 md:gap-1.5 flex-1 text-right pr-3">
           <h3
             className={`
               font-[Cairo]
-              text-md md:text-lg
-              font-bold
+              text-base md:text-lg
+              font-semibold
               text-[#60340e]
+              leading-snug
               ${unavailable ? "line-through text-gray-400" : ""}
             `}
           >
@@ -58,8 +52,9 @@ export default function ItemRow({ item, orderSystem }: Props) {
           {hasIngredients && (
             <p
               className={`
-                text-sm md:text-base
+                text-xs md:text-sm
                 font-[Cairo]
+                font-light
                 text-[#60340e]/70
                 leading-relaxed
                 ${unavailable ? "line-through text-gray-400" : ""}
@@ -70,65 +65,33 @@ export default function ItemRow({ item, orderSystem }: Props) {
           )}
         </div>
 
-        {/* ===== Left Side: PRICE BOX (No Decoration) ===== */}
-        <div className="flex items-center justify-center min-w-[110px]">
-
-          {/* --- No Order System --- */}
+        {/* ===== Left Side: Price Box (Balanced Typography) ===== */}
+        <div className="flex items-center justify-center shrink-0 min-w-[85px] md:min-w-[100px] px-1 md:px-2 pr-10">
           {!orderSystem && (
             <div
               className="
-                px-3 py-1
-                rounded-xl
-                bg-[#60340e]/90
-                shadow-[0_4px_8px_rgba(96,52,14,0.45)]
+                px-3 py-1.5
+                rounded-md
+                bg-[#60340e]
+                border border-[#C9A84C]/20
+                shadow-xs
+                flex items-center justify-center
               "
             >
               <span
                 className={`
-                  text-md md:text-lg
-                  font-black
+                  text-sm md:text-base
+                  font-bold
                   font-[Cairo]
-                  text-[#F5F5DC]
+                  text-[#F7F3E8]
                   tracking-wide
-                  ${unavailable ? "line-through" : ""}
+                  ${unavailable ? "line-through opacity-60" : ""}
                 `}
               >
                 {prices.map((p) => p.trim() + "₪").join(" | ")}
               </span>
             </div>
           )}
-
-          {/* --- Order System --- */}
-          {/* {orderSystem && (
-            <div className="flex flex-col gap-2 w-full">
-              {prices.map((p) => {
-                const price = Number(p.trim());
-                const isAdded = addedPrice === price;
-
-                return (
-                  <button
-                    key={price}
-                    onClick={() => handleAdd(price)}
-                    disabled={unavailable}
-                    className={`
-                      w-full
-                      px-4 py-2
-                      rounded-xl
-                      border border-[#60340e]
-                      font-bold
-                      transition-all
-                      ${isAdded
-                        ? "bg-[#60340e] text-[#F5F5DC]"
-                        : "bg-[#F5F5DC] text-[#60340e] hover:bg-[#60340e]/10"}
-                    `}
-                  >
-                    {isAdded ? <FaCheck /> : `${price}₪`}
-                  </button>
-                );
-              })}
-            </div>
-          )} */}
-
         </div>
       </div>
     </div>

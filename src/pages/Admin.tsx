@@ -1,7 +1,23 @@
 import { useEffect, useState } from "react";
 import { db, auth } from "../firebase";
 import { ref, onValue, push, remove, update, get, set } from "firebase/database";
-import { FiDownload, FiSettings, FiUpload } from "react-icons/fi";
+import {
+  FiDownload,
+  FiSettings,
+  FiUpload,
+  FiLogOut,
+  FiGrid,
+  FiBox,
+  FiCheckCircle,
+  FiStar,
+  FiDatabase,
+  FiLayers,
+  FiLock,
+  FiUser,
+  FiMenu,
+  FiX,
+  FiRefreshCw,
+} from "react-icons/fi";
 
 import {
   signInWithEmailAndPassword,
@@ -9,7 +25,6 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
-import { FiLogOut } from "react-icons/fi";
 
 import ExcelJS from "exceljs";
 import { saveAs } from "file-saver";
@@ -19,7 +34,6 @@ import ItemSection from "../components/admin/ItemSection";
 import Popup from "../components/admin/Popup";
 import { type PopupState } from "../components/admin/types";
 import OrderSettingsModal from "../components/admin/OrderSettingsModal";
-import { FaDatabase } from "react-icons/fa";
 
 export default function Admin() {
   const [authOk, setAuthOk] = useState(false);
@@ -57,6 +71,9 @@ export default function Admin() {
     footerInfo: { address: "", phone: "", whatsapp: "", facebook: "", instagram: "", tiktok: "" },
   });
 
+  /* ===== Sidebar State ===== */
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<"dashboard" | "categories" | "items">("dashboard");
 
   // ================= AUTH LISTENER =================
   useEffect(() => {
@@ -66,38 +83,26 @@ export default function Admin() {
     return () => unsub();
   }, []);
 
-  // ================= AUTO LOGOUT ON LEAVE /admin =================
-  // useEffect(() => {
-  //   const handleBeforeUnload = () => {
-  //     signOut(auth);
-  //   };
-
-  //   window.addEventListener("beforeunload", handleBeforeUnload);
-  //   return () => window.removeEventListener("beforeunload", handleBeforeUnload);
-  // }, []);
-
-
   // ================= FIREBASE DATA =================
   useEffect(() => {
     if (!authOk) return;
-    setLoading(true); // 🔥 شغّل اللودر
+    setLoading(true);
 
     const catRef = ref(db, "categories");
     const itemRef = ref(db, "items");
     onValue(catRef, (snap) => setCategories(snap.val() || {}));
     onValue(itemRef, (snap) => setItems(snap.val() || {}));
-    setLoading(false); // 🔥 اطفّل اللودر
+    setLoading(false);
   }, [authOk]);
 
   // ================= ORDER SETTINGS INITIALIZE =================
   useEffect(() => {
     if (!authOk) return;
 
-    const settingsRef = ref(db, "settings"); // ⚡ جلب كل الإعدادات
+    const settingsRef = ref(db, "settings");
     const initSettings = async () => {
       const snap = await get(settingsRef);
       if (!snap.exists()) {
-        // إذا مش موجود، نضيف إعدادات افتراضية كاملة
         const defaultSettings = {
           complaintsWhatsapp: "",
           footerInfo: {
@@ -106,7 +111,7 @@ export default function Admin() {
             instagram: "",
             phone: "",
             tiktok: "",
-            whatsapp: ""
+            whatsapp: "",
           },
           orderSettings: {
             inRestaurant: false,
@@ -114,15 +119,15 @@ export default function Admin() {
             takeaway: false,
             outPhone: "",
           },
-          orderSystem: true
+          orderSystem: true,
         };
         await set(settingsRef, defaultSettings);
         setSettings(defaultSettings);
-        setOrderSettings(defaultSettings); // ⚡ للModal
+        setOrderSettings(defaultSettings);
       } else {
         const data = snap.val();
         setSettings(data);
-        setOrderSettings(data); // ⚡ للModal
+        setOrderSettings(data);
       }
     };
     initSettings();
@@ -131,7 +136,7 @@ export default function Admin() {
   // ================= LOGIN =================
   const login = async () => {
     if (!email || !password) {
-      setToast("أدخل البريد وكلمة المرور");
+      setToast("أدخل البريد وكلمة المرور ⚠️");
       setTimeout(() => setToast(""), 3000);
       return;
     }
@@ -140,7 +145,7 @@ export default function Admin() {
       setToast("تم تسجيل الدخول بنجاح ✅");
       setTimeout(() => setToast(""), 3000);
     } catch {
-      setToast("بيانات الدخول غير صحيحة");
+      setToast("بيانات الدخول غير صحيحة ❌");
       setTimeout(() => setToast(""), 3000);
     }
   };
@@ -148,7 +153,7 @@ export default function Admin() {
   // ================= RESET PASSWORD =================
   const handleResetPassword = async () => {
     if (!resetEmail.trim()) {
-      setResetMessage("أدخل البريد الإلكتروني أولاً");
+      setResetMessage("أدخل البريد الإلكتروني أولاً ⚠️");
       return;
     }
     try {
@@ -171,7 +176,7 @@ export default function Admin() {
   // ================= CATEGORY =================
   const addCategory = async () => {
     if (!newCategoryName.trim()) {
-      setToast("⚠️  يجب إدخال اسم القسم أولاً");
+      setToast("⚠️ يجب إدخال اسم القسم أولاً");
       setTimeout(() => setToast(""), 3000);
       return;
     }
@@ -200,7 +205,7 @@ export default function Admin() {
       if (items[itemId].categoryId === id) remove(ref(db, `items/${itemId}`));
     });
     setPopup({ type: null });
-    setToast("  تم حذف القسم بنجاح ✅");
+    setToast("تم حذف القسم بنجاح ✅");
     setTimeout(() => setToast(""), 4000);
   };
 
@@ -209,7 +214,7 @@ export default function Admin() {
     if (!popup.id) return;
     await remove(ref(db, `items/${popup.id}`));
     setPopup({ type: null });
-    setToast("  تم حذف الصنف بنجاح ✅");
+    setToast("تم حذف الصنف بنجاح ✅");
     setTimeout(() => setToast(""), 4000);
   };
 
@@ -231,9 +236,10 @@ export default function Admin() {
       selectedCategory: "",
       itemIngredients: "",
     });
-    setToast("  تم التعديل بنجاح ✅");
+    setToast("تم التعديل بنجاح ✅");
     setTimeout(() => setToast(""), 4000);
   };
+
   // ================= EXPORT EXCEL =================
   const exportToExcel = async () => {
     if (!categories || !items) {
@@ -304,7 +310,7 @@ export default function Admin() {
 
       const rows: any[] = [];
       sheet.eachRow((row, index) => {
-        if (index === 1) return; // تجاهل رأس الجدول
+        if (index === 1) return;
         rows.push({
           name: row.getCell(1).value?.toString().trim() || "",
           price: row.getCell(2).value?.toString().trim() || "",
@@ -356,10 +362,8 @@ export default function Admin() {
     }
   };
 
-
   // ================= EXPORT JSON =================
   const exportToJSON = () => {
-    // بناء بيانات JSON بشكل مرتب
     const data = {
       categories,
       items,
@@ -398,19 +402,11 @@ export default function Admin() {
     setTimeout(() => setToast(""), 4000);
   };
 
-
-
-
-
   // ================= SAVE ORDER SETTINGS =================
   const handleSaveOrderSettings = async (newSettings: any) => {
     try {
       setLoading(true);
-
-      // تحديث Firebase
       await update(ref(db, "settings"), newSettings);
-
-      // تحديث الـ state محلياً
       setSettings(newSettings);
       setOrderSettings(newSettings);
 
@@ -426,226 +422,457 @@ export default function Admin() {
     }
   };
 
+  // ================= KPI COMPUTED STATS =================
+  const totalCategories = Object.keys(categories).length;
+  const totalItems = Object.keys(items).length;
+  const visibleItemsCount = Object.values(items).filter((i: any) => i.visible !== false).length;
+  const starItemsCount = Object.values(items).filter((i: any) => i.star === true).length;
 
-
-  // ================= LOGIN UI =================
+  // ================= LOGIN UI (SaaS Premium Authentication) =================
   if (!authOk) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-[#F7F3E8]" dir="rtl">
+      <div
+        className="min-h-screen flex items-center justify-center bg-[#F5F2EB] p-4 relative overflow-hidden font-[Cairo]"
+        dir="rtl"
+      >
+        {/* Background Ambient Glow */}
+        <div className="absolute top-1/4 -right-20 w-96 h-96 bg-[#60340e]/10 rounded-full blur-3xl pointer-events-none animate-pulse" />
+        <div className="absolute bottom-1/4 -left-20 w-96 h-96 bg-[#C9A84C]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
+
+        {/* Global Toast Notification */}
         {toast && (
-          <div className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 bg-[#60340e] text-white px-6 py-3 rounded-xl shadow-lg transition-all">
-            {toast}
+          <div className="fixed top-6 right-1/2 translate-x-1/2 z-50 bg-[#60340e] text-[#F7F3E8] px-6 py-3 rounded-2xl font-bold shadow-2xl animate-toast-show flex items-center gap-2">
+            <span>{toast}</span>
           </div>
         )}
-        {/* POPUP إعادة تعيين كلمة المرور */}
+
+        {/* POPUP: Reset Password */}
         {resetPasswordPopup && (
-          <div className="fixed inset-0 bg-[#F7F3E8] flex justify-center items-center z-50 ">
-            <div className="bg-white rounded-3xl shadow-2xl p-6 w-full max-w-sm border-4 border-[#60340e]">
-              {/* الشعار */}
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex justify-center items-center z-50 p-4 animate-fadeIn">
+            <div className="bg-[#FDFAF5] rounded-3xl shadow-2xl p-6 md:p-8 w-full max-w-md border border-[#60340e]/15 relative">
+              <button
+                onClick={() => {
+                  setResetPasswordPopup(false);
+                  setResetMessage("");
+                }}
+                className="absolute top-4 left-4 p-2 text-[#60340e]/60 hover:text-[#60340e] rounded-full transition"
+              >
+                <FiX size={20} />
+              </button>
+
               <div className="flex justify-center mb-4">
-                <img src="/logo.png" alt="Logo" className="w-24 h-24 object-contain" />
+                <img src="/logo.png" alt="Logo" className="w-20 h-20 object-contain drop-shadow-md" />
               </div>
-              <h2 className="text-xl font-bold mb-4 text-[#60340e] text-center">
+              <h2 className="text-xl font-bold mb-1 text-[#60340e] text-center">
                 إعادة تعيين كلمة المرور
               </h2>
-              <input
-                type="email"
-                placeholder="أدخل بريدك الإلكتروني"
-                className="w-full p-3 border rounded-xl mb-3"
-                value={resetEmail}
-                onChange={(e) => setResetEmail(e.target.value)}
-              />
-              {resetMessage && (
-                <p className="text-sm text-center text-green-600 mb-2">{resetMessage}</p>
-              )}
-              <div className="flex justify-end gap-2">
-                <button
-                  onClick={handleResetPassword}
-                  className="bg-[#60340e] text-white px-4 py-2 rounded-xl hover:bg-[#60340e]/80 transition"
-                >
-                  إرسال الرابط
-                </button>
-                <button
-                  onClick={() => {
-                    setResetPasswordPopup(false);
-                    setResetMessage("");
-                  }}
-                  className="px-4 py-2 rounded-xl border hover:bg-gray-100 transition"
-                >
-                  إلغاء
-                </button>
+              <p className="text-xs text-[#60340e]/70 text-center mb-5">
+                أدخل البريد الإلكتروني المسجل لإرسال رابط التعيين
+              </p>
+
+              <div className="space-y-4">
+                <div className="relative">
+                  <input
+                    type="email"
+                    placeholder="البريد الإلكتروني"
+                    className="w-full px-4 py-3 rounded-xl bg-[#FAF6ED] text-[#2C1A0E] border border-[#60340e]/20 focus:border-[#60340e] focus:ring-1 focus:ring-[#60340e] outline-none text-sm"
+                    value={resetEmail}
+                    onChange={(e) => setResetEmail(e.target.value)}
+                  />
+                </div>
+
+                {resetMessage && (
+                  <div className="p-3 rounded-xl bg-green-50 border border-green-200 text-green-800 text-xs text-center font-medium">
+                    {resetMessage}
+                  </div>
+                )}
+
+                <div className="flex gap-3 pt-2">
+                  <button
+                    onClick={handleResetPassword}
+                    className="flex-1 py-3 rounded-xl font-bold bg-[#60340e] text-[#F7F3E8] hover:bg-[#7A4218] transition active:scale-98"
+                  >
+                    إرسال الرابط
+                  </button>
+                  <button
+                    onClick={() => {
+                      setResetPasswordPopup(false);
+                      setResetMessage("");
+                    }}
+                    className="px-5 py-3 rounded-xl font-semibold border border-[#60340e]/20 text-[#60340e] hover:bg-[#60340e]/5 transition"
+                  >
+                    إلغاء
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         )}
 
-        {/* POPUP تسجيل الدخول */}
+        {/* Login Card Container */}
         {!resetPasswordPopup && (
-          <div
-            className="bg-white p-6 rounded-3xl w-full max-w-xs border-4 flex flex-col items-center"
-            style={{ borderColor: "#60340e" }}
-          >
-            {toast && (
-              <div className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 bg-[#60340e] text-white px-6 py-3 rounded-xl shadow-lg transition-all">
-                {toast}
-              </div>
-            )}
-            {/* الشعار */}
-            <div className="mb-4">
-              <img src="/logo.png" alt="Logo" className="w-24 h-24 object-contain" />
+          <div className="relative z-10 w-full max-w-md bg-white/90 backdrop-blur-xl p-8 md:p-10 rounded-3xl admin-shadow-modal border border-[#60340e]/15 flex flex-col items-center animate-modal-enter">
+            {/* Brand Header */}
+            <div className="w-24 h-24 mb-4 rounded-full bg-[#FDFAF5] p-3 shadow-inner flex items-center justify-center border border-[#C9A84C]/30">
+              <img src="/logo.png" alt="Logo" className="w-full h-full object-contain drop-shadow" />
             </div>
-            <h1 className="text-xl font-bold mb-4 text-center text-[#60340e]">دخول الأدمن</h1>
-            <input
-              type="email"
-              className="w-full p-3 border rounded-xl mb-3"
-              placeholder="اسم المستخدم (Email)"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              className="w-full p-3 border rounded-xl mb-4"
-              placeholder="كلمة المرور"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <button
-              onClick={login}
-              className="w-full py-3 rounded-xl font-bold bg-[#723901] text-white hover:cursor-pointer hover:bg-[#723901]/80"
-            >
-              دخول
-            </button>
-            <button
-              onClick={() => setResetPasswordPopup(true)}
-              className="mt-3 text-sm text-red-600 hover:underline hover:cursor-pointer"
-            >
-              نسيت كلمة المرور؟
-            </button>
+
+            <h1 className="text-2xl font-extrabold text-[#60340e] mb-1">لوحة الأدمن</h1>
+            <p className="text-xs text-[#60340e]/70 mb-6 font-medium">مطعم التايلندي — إدارة القائمة والإعدادات</p>
+
+            <div className="w-full space-y-4">
+              <div>
+                <label className="block text-xs font-semibold text-[#60340e]/80 mb-1.5 pr-1">
+                  البريد الإلكتروني
+                </label>
+                <div className="relative">
+                  <FiUser className="absolute top-1/2 -translate-y-1/2 right-3.5 text-[#60340e]/40" size={18} />
+                  <input
+                    type="email"
+                    className="w-full pr-10 pl-4 py-3 rounded-xl bg-[#FAF6ED] text-[#2C1A0E] border border-[#60340e]/20 focus:border-[#60340e] focus:ring-1 focus:ring-[#60340e] outline-none text-sm transition"
+                    placeholder="admin@tailandi.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-[#60340e]/80 mb-1.5 pr-1">
+                  كلمة المرور
+                </label>
+                <div className="relative">
+                  <FiLock className="absolute top-1/2 -translate-y-1/2 right-3.5 text-[#60340e]/40" size={18} />
+                  <input
+                    type="password"
+                    className="w-full pr-10 pl-4 py-3 rounded-xl bg-[#FAF6ED] text-[#2C1A0E] border border-[#60340e]/20 focus:border-[#60340e] focus:ring-1 focus:ring-[#60340e] outline-none text-sm transition"
+                    placeholder="••••••••"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && login()}
+                  />
+                </div>
+              </div>
+
+              <button
+                onClick={login}
+                className="w-full py-3.5 rounded-xl font-bold bg-[#60340e] text-[#F7F3E8] hover:bg-[#7A4218] active:scale-98 transition shadow-lg shadow-[#60340e]/20 mt-2"
+              >
+                تسجيل الدخول
+              </button>
+
+              <div className="text-center pt-2">
+                <button
+                  onClick={() => setResetPasswordPopup(true)}
+                  className="text-xs font-medium text-[#60340e]/70 hover:text-[#60340e] hover:underline transition"
+                >
+                  نسيت كلمة المرور؟
+                </button>
+              </div>
+            </div>
           </div>
         )}
       </div>
     );
   }
 
-
-  // ================= ADMIN PANEL =================
+  // ================= ADMIN DASHBOARD SHELL =================
   return (
-    <div className="min-h-screen w-full bg-[#F7F3E8] flex justify-center py-5 md:p-6" dir="rtl">
+    <div className="min-h-screen w-full bg-[#F5F2EB] flex font-[Cairo] text-[#2C1A0E]" dir="rtl">
+      {/* Toast Notification */}
       {toast && (
-        <div className="fixed top-5 left-1/2 transform -translate-x-1/2 z-50 bg-[#723901] text-white px-6 py-3 rounded-xl shadow-lg transition-all">
-          {toast}
+        <div className="fixed top-6 right-1/2 translate-x-1/2 z-50 bg-[#60340e] text-[#F7F3E8] px-6 py-3 rounded-2xl font-bold shadow-2xl animate-toast-show flex items-center gap-2">
+          <span>{toast}</span>
         </div>
       )}
+
+      {/* Loading Overlay */}
       {loading && (
-        <div className="fixed inset-0 bg-black/30 flex justify-center items-center z-40">
-          <div className="bg-white p-6 rounded-xl shadow-lg text-black font-bold">
-            جاري تحميل البيانات...
+        <div className="fixed inset-0 bg-black/40 backdrop-blur-xs flex justify-center items-center z-50">
+          <div className="bg-white px-6 py-5 rounded-2xl elevation-4 flex items-center gap-3 text-[#60340e] font-bold">
+            <FiRefreshCw className="animate-spin text-xl text-[#C9A84C]" />
+            <span>جاري المزامنة مع قاعدة البيانات...</span>
           </div>
         </div>
       )}
 
-      {/* Inputs مخفية للملفات */}
+      {/* Hidden File Input for Excel Import */}
       <input type="file" accept=".xlsx" id="excelUpload" hidden onChange={importFromExcel} />
 
-      <div className="w-full max-w-7xl px-8 sm:px-8 md:px-24">
-        <div className="flex justify-between items-center mb-6 flex-wrap">
-          <h1 className="text-3xl font-extrabold text-[#723901] mb-4">لوحة تحكم التايلندي</h1>
-          <div className="flex gap-2 flex-wrap">
-            {/* Order Settings Button */}
-            <button
-              onClick={() => setShowOrderSettings(true)}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-yellow-600 text-white font-bold hover:bg-yellow-500 transition hover:cursor-pointer"
-            >
-              <FiSettings size={18} />
-            </button>
-            {/* Excel Buttons */}
-            <button
-              onClick={exportToExcel}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-green-600 text-white font-bold hover:bg-green-500 transition hover:cursor-pointer"
-            >
-              <FiUpload size={18} />
-            </button>
-            <button
-              onClick={() => document.getElementById
-                ("excelUpload")?.click()}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition hover:cursor-pointer"
-            >
-              <FiDownload size={18} />
-            </button>
+      {/* Mobile Sidebar Backdrop Overlay */}
+      {sidebarOpen && (
+        <div
+          onClick={() => setSidebarOpen(false)}
+          className="fixed inset-0 bg-black/50 backdrop-blur-xs z-30 lg:hidden"
+        />
+      )}
 
-            {/* JSON Buttons */}
-            <button
-              onClick={exportToJSON}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#940D11] text-white font-bold hover:bg-[#d02c37] transition hover:cursor-pointer"
-            >
-              backup
-              <FaDatabase size={18} />
-            </button>
+      {/* ===== SIDEBAR NAVIGATION ===== */}
+      <aside
+        className={`
+          fixed lg:static inset-y-0 right-0 z-40
+          w-64 bg-[#1E1711] text-[#F5F2EB]
+          flex flex-col justify-between
+          transition-transform duration-300 ease-in-out
+          ${sidebarOpen ? "translate-x-0" : "translate-x-full lg:translate-x-0"}
+          border-l border-white/5 shadow-2xl shrink-0
+        `}
+      >
+        <div>
+          {/* Brand Header */}
+          <div className="p-6 border-b border-white/10 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-white/10 p-1 flex items-center justify-center border border-[#C9A84C]/30 shrink-0">
+                <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
+              </div>
+              <div>
+                <h1 className="font-extrabold text-sm text-[#F5F2EB] leading-tight">التايلندي</h1>
+                <span className="text-[10px] text-[#C9A84C] font-semibold tracking-wider">لوحة التحكم الفاخرة</span>
+              </div>
+            </div>
 
-            {/* Logout */}
             <button
-              onClick={() => setPopup({ type: "logout" })}
-              className="px-4 py-2 rounded-xl font-bold bg-[#d60208] text-white flex items-center gap-1 hover:text-black hover:bg-[#d2343a] hover:cursor-pointer"
+              onClick={() => setSidebarOpen(false)}
+              className="lg:hidden text-white/70 hover:text-white"
             >
-              <FiLogOut /> خروج
+              <FiX size={20} />
             </button>
           </div>
+
+          {/* Navigation Links */}
+          <nav className="p-4 space-y-1.5">
+            <button
+              onClick={() => { setActiveTab("dashboard"); setSidebarOpen(false); }}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-sm transition ${
+                activeTab === "dashboard"
+                  ? "bg-[#60340e] text-white shadow-md border border-[#C9A84C]/30"
+                  : "text-white/70 hover:bg-white/5 hover:text-white"
+              }`}
+            >
+              <FiGrid className="text-lg text-[#C9A84C]" />
+              <span>الملخص السريع</span>
+            </button>
+
+            <button
+              onClick={() => { setActiveTab("categories"); setSidebarOpen(false); }}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-sm transition ${
+                activeTab === "categories"
+                  ? "bg-[#60340e] text-white shadow-md border border-[#C9A84C]/30"
+                  : "text-white/70 hover:bg-white/5 hover:text-white"
+              }`}
+            >
+              <FiLayers className="text-lg text-[#C9A84C]" />
+              <span>إدارة الأقسام ({totalCategories})</span>
+            </button>
+
+            <button
+              onClick={() => { setActiveTab("items"); setSidebarOpen(false); }}
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-sm transition ${
+                activeTab === "items"
+                  ? "bg-[#60340e] text-white shadow-md border border-[#C9A84C]/30"
+                  : "text-white/70 hover:bg-white/5 hover:text-white"
+              }`}
+            >
+              <FiBox className="text-lg text-[#C9A84C]" />
+              <span>إدارة الأصناف ({totalItems})</span>
+            </button>
+          </nav>
         </div>
 
-        <CategorySection
-          categories={categories}
-          setPopup={setPopup}
-          newCategoryName={newCategoryName}
-          setNewCategoryName={setNewCategoryName}
-        />
+        {/* Sidebar Footer Info & Live Status */}
+        <div className="p-4 border-t border-white/10 space-y-3">
+          <div className="flex items-center gap-2 px-3 py-2 rounded-xl bg-white/5 border border-white/5 text-xs text-white/80">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>متصل بـ Firebase Live</span>
+          </div>
 
-        <ItemSection
-          categories={categories}
-          items={items}
-          popup={popup}
-          setPopup={(p) => {
-            setPopup(p);
-            if (p.type === "editItem" && p.id) {
-              const item = items[p.id];
-              if (item) {
-                setEditItemId(p.id);
-                setEditItemValues({
-                  itemName: item.name,
-                  itemPrice: item.price,
-                  priceTw: item.priceTw || "",
-                  selectedCategory: item.categoryId,
-                  itemIngredients: item.ingredients || "",
-                });
-              }
-            }
-          }}
-        />
+          <button
+            onClick={() => setPopup({ type: "logout" })}
+            className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl font-bold bg-rose-600/20 text-rose-300 hover:bg-rose-600 hover:text-white transition duration-200 text-xs"
+          >
+            <FiLogOut size={16} />
+            <span>تسجيل الخروج</span>
+          </button>
+        </div>
+      </aside>
 
-        <Popup
-          popup={popup}
-          setPopup={setPopup}
-          addCategory={addCategory}
-          deleteCategory={deleteCategory}
-          deleteItem={deleteItem}
-          updateItem={updateItem}
-          editItemValues={editItemValues}
-          setEditItemValues={setEditItemValues}
-          categories={categories}
-          resetPasswordPopup={resetPasswordPopup}
-          setResetPasswordPopup={setResetPasswordPopup}
-          resetEmail={resetEmail}
-          setResetEmail={setResetEmail}
-          resetMessage={resetMessage}
-          handleResetPassword={handleResetPassword}
-          logout={logout}
-        />
+      {/* ===== MAIN WORKSPACE CONTENT CANVAS ===== */}
+      <div className="flex-1 flex flex-col min-w-0 overflow-x-hidden">
+        {/* TOP HEADER BAR */}
+        <header className="bg-white/80 backdrop-blur-md border-b border-[#60340e]/10 px-4 md:px-8 py-4 flex items-center justify-between sticky top-0 z-20">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setSidebarOpen(true)}
+              className="lg:hidden p-2 text-[#60340e] hover:bg-[#60340e]/10 rounded-xl"
+            >
+              <FiMenu size={22} />
+            </button>
+
+            <div>
+              <h2 className="text-lg md:text-xl font-bold text-[#60340e]">لوحة الإدارة الرئيسية</h2>
+              <p className="text-xs text-[#60340e]/60 font-medium hidden sm:block">إدارة وتحديث منيو مطعم التايلندي لحظياً</p>
+            </div>
+          </div>
+
+          {/* Quick Action Toolbar Buttons */}
+          <div className="flex items-center gap-2 flex-wrap">
+            {/* System Order Settings */}
+            <button
+              onClick={() => setShowOrderSettings(true)}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#FAF6ED] text-[#60340e] border border-[#60340e]/20 font-semibold text-xs hover:bg-[#60340e] hover:text-white transition shadow-xs"
+              title="إعدادات النظام والطلب"
+            >
+              <FiSettings size={16} />
+              <span className="hidden sm:inline">الإعدادات</span>
+            </button>
+
+            {/* Export Excel */}
+            <button
+              onClick={exportToExcel}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-700 text-white font-semibold text-xs hover:bg-emerald-800 transition shadow-xs"
+              title="تصدير Excel"
+            >
+              <FiUpload size={16} />
+              <span className="hidden sm:inline">تصدير Excel</span>
+            </button>
+
+            {/* Import Excel */}
+            <button
+              onClick={() => document.getElementById("excelUpload")?.click()}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-sky-700 text-white font-semibold text-xs hover:bg-sky-800 transition shadow-xs"
+              title="استيراد Excel"
+            >
+              <FiDownload size={16} />
+              <span className="hidden sm:inline">استيراد Excel</span>
+            </button>
+
+            {/* JSON Backup */}
+            <button
+              onClick={exportToJSON}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-amber-700 text-white font-semibold text-xs hover:bg-amber-800 transition shadow-xs"
+              title="نسخة احتياطية JSON"
+            >
+              <FiDatabase size={16} />
+              <span className="hidden sm:inline">نسخة JSON</span>
+            </button>
+          </div>
+        </header>
+
+        {/* WORKSPACE BODY */}
+        <main className="p-4 md:p-8 max-w-7xl w-full mx-auto space-y-6">
+          {/* ===== KPI STATS SUMMARY CARDS WIDGET ===== */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
+            {/* Total Categories */}
+            <div className="bg-white p-4 md:p-5 rounded-2xl border border-[#60340e]/10 elevation-1 flex items-center justify-between">
+              <div>
+                <span className="text-xs font-semibold text-[#60340e]/60 block mb-1">إجمالي الأقسام</span>
+                <span className="text-xl md:text-2xl font-extrabold text-[#60340e]">{totalCategories}</span>
+              </div>
+              <div className="w-10 h-10 rounded-xl bg-[#60340e]/10 flex items-center justify-center text-[#60340e]">
+                <FiLayers size={20} />
+              </div>
+            </div>
+
+            {/* Total Items */}
+            <div className="bg-white p-4 md:p-5 rounded-2xl border border-[#60340e]/10 elevation-1 flex items-center justify-between">
+              <div>
+                <span className="text-xs font-semibold text-[#60340e]/60 block mb-1">إجمالي الأصناف</span>
+                <span className="text-xl md:text-2xl font-extrabold text-[#60340e]">{totalItems}</span>
+              </div>
+              <div className="w-10 h-10 rounded-xl bg-[#60340e]/10 flex items-center justify-center text-[#60340e]">
+                <FiBox size={20} />
+              </div>
+            </div>
+
+            {/* Available Items */}
+            <div className="bg-white p-4 md:p-5 rounded-2xl border border-[#60340e]/10 elevation-1 flex items-center justify-between">
+              <div>
+                <span className="text-xs font-semibold text-[#60340e]/60 block mb-1">الأصناف المتاحة</span>
+                <span className="text-xl md:text-2xl font-extrabold text-emerald-700">{visibleItemsCount}</span>
+              </div>
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-700">
+                <FiCheckCircle size={20} />
+              </div>
+            </div>
+
+            {/* Featured Items */}
+            <div className="bg-white p-4 md:p-5 rounded-2xl border border-[#60340e]/10 elevation-1 flex items-center justify-between">
+              <div>
+                <span className="text-xs font-semibold text-[#60340e]/60 block mb-1">المميزة ⭐</span>
+                <span className="text-xl md:text-2xl font-extrabold text-[#C9A84C]">{starItemsCount}</span>
+              </div>
+              <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center text-[#C9A84C]">
+                <FiStar size={20} />
+              </div>
+            </div>
+          </div>
+
+          {/* ===== CATEGORY SECTION (Drag & Drop Reorder) ===== */}
+          {(activeTab === "dashboard" || activeTab === "categories") && (
+            <div className="w-full">
+              <CategorySection
+                categories={categories}
+                setPopup={setPopup}
+                newCategoryName={newCategoryName}
+                setNewCategoryName={setNewCategoryName}
+              />
+            </div>
+          )}
+
+          {/* ===== ITEM SECTION (Items Table & Add Form) ===== */}
+          {(activeTab === "dashboard" || activeTab === "items") && (
+            <div className="w-full">
+              <ItemSection
+                categories={categories}
+                items={items}
+                popup={popup}
+                setPopup={(p) => {
+                  setPopup(p);
+                  if (p.type === "editItem" && p.id) {
+                    const item = items[p.id];
+                    if (item) {
+                      setEditItemId(p.id);
+                      setEditItemValues({
+                        itemName: item.name,
+                        itemPrice: item.price,
+                        priceTw: item.priceTw || "",
+                        selectedCategory: item.categoryId,
+                        itemIngredients: item.ingredients || "",
+                      });
+                    }
+                  }
+                }}
+              />
+            </div>
+          )}
+        </main>
       </div>
 
-      {/* Order Settings Modal */}
+      {/* ===== GLOBAL POPUP DIALOGS ===== */}
+      <Popup
+        popup={popup}
+        setPopup={setPopup}
+        addCategory={addCategory}
+        deleteCategory={deleteCategory}
+        deleteItem={deleteItem}
+        updateItem={updateItem}
+        editItemValues={editItemValues}
+        setEditItemValues={setEditItemValues}
+        categories={categories}
+        resetPasswordPopup={resetPasswordPopup}
+        setResetPasswordPopup={setResetPasswordPopup}
+        resetEmail={resetEmail}
+        setResetEmail={setResetEmail}
+        resetMessage={resetMessage}
+        handleResetPassword={handleResetPassword}
+        logout={logout}
+      />
+
+      {/* ===== ORDER SETTINGS MODAL ===== */}
       {showOrderSettings && orderSettings && (
         <OrderSettingsModal
           setShowOrderSettings={setShowOrderSettings}
-          orderSettings={orderSettings} // ⚡ الآن تمرر كل الإعدادات
+          orderSettings={orderSettings}
           onSave={handleSaveOrderSettings}
         />
       )}

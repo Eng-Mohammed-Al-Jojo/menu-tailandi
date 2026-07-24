@@ -3,47 +3,61 @@
     "-Ol_1MqZG1f5lrEZ-8dA": {
       "available": true,
       "createdAt": 1771221646800,
-      "name": "الشاورما"
+      "name": "الشاورما",
+      "order": 0
     },
     "-OlbFRAfmmDfaqUtLRxI": {
       "available": true,
       "createdAt": 1771258888842,
-      "name": "المشاوي"
+      "name": "المشاوي",
+      "order": 1
     },
     "-OlbFU1efK8WiPb-GtJK": {
       "available": true,
       "createdAt": 1771258900553,
-      "name": "سندوتشات غربي"
+      "name": "سندوتشات غربي",
+      "order": 2
     },
     "-OlbwSJ4iw71ML1ob33p": {
       "available": true,
       "createdAt": 1771270427793,
-      "name": "البيتزا"
+      "name": "البيتزا",
+      "order": 3
     },
     "-OlbwWb9o8dEEGLtcYsC": {
       "available": true,
       "createdAt": 1771270445400,
-      "name": "شيبسي"
+      "name": "شيبسي",
+      "order": 4
     },
     "-Olbwhqu1IZ8E-uRUJS7": {
       "available": true,
       "createdAt": 1771270495560,
-      "name": "السلطات"
+      "name": "السلطات",
+      "order": 5
     },
     "-OlbwjSeLd6XjVYq9d1q": {
       "available": true,
       "createdAt": 1771270502136,
-      "name": "الحلويات"
+      "name": "الحلويات",
+      "order": 6
     },
     "-OlbwlCPn5zUpkGl2eEH": {
       "available": true,
       "createdAt": 1771270509288,
-      "name": "المشروبات الباردة"
+      "name": "المشروبات الباردة",
+      "order": 7
     },
     "-OlbwnlmwJ8fcMFueWbQ": {
       "available": true,
       "createdAt": 1771270519808,
-      "name": "المشروبات الساخنة"
+      "name": "المشروبات الساخنة",
+      "order": 8
+    },
+    "-OouWNpMULbazLumvTOq": {
+      "available": true,
+      "createdAt": 1774803324424,
+      "name": "القسم الشرقي"
     }
   },
   "items": {
@@ -53,7 +67,7 @@
       "image": "",
       "ingredients": "",
       "name": "فرشوحة شاورما عادي",
-      "price": "20",
+      "price": "‏25",
       "priceTw": "",
       "star": false,
       "visible": true
@@ -64,7 +78,7 @@
       "image": "",
       "ingredients": "",
       "name": "فرشوحة شاورما دبل ",
-      "price": "22",
+      "price": "‏27",
       "priceTw": "",
       "star": false,
       "visible": true
@@ -97,7 +111,7 @@
       "image": "",
       "ingredients": "",
       "name": "سوري شاورما",
-      "price": "32",
+      "price": "30",
       "priceTw": "",
       "star": false,
       "visible": true
@@ -109,6 +123,7 @@
       "ingredients": "",
       "name": "صفيحة شاورما",
       "price": "35",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -158,7 +173,8 @@
       "image": "",
       "ingredients": "",
       "name": "وجبة مسحب",
-      "price": "40",
+      "price": "45",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -168,7 +184,8 @@
       "image": "",
       "ingredients": "",
       "name": "سبايسي",
-      "price": "40",
+      "price": "‏45",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -188,7 +205,8 @@
       "image": "",
       "ingredients": "",
       "name": "دجاج + أرز",
-      "price": "60",
+      "price": "‏80",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -208,7 +226,8 @@
       "image": "",
       "ingredients": "",
       "name": "تشيكن ستريجنوف",
-      "price": "30",
+      "price": "35",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -218,7 +237,8 @@
       "image": "",
       "ingredients": "",
       "name": "تشيكن بيتزا",
-      "price": "30",
+      "price": "35",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -228,7 +248,8 @@
       "image": "",
       "ingredients": "",
       "name": "فاهيتا دجاج",
-      "price": "30",
+      "price": "35",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -238,7 +259,8 @@
       "image": "",
       "ingredients": "",
       "name": "دجاج بالذرة",
-      "price": "30",
+      "price": "35",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -248,7 +270,8 @@
       "image": "",
       "ingredients": "",
       "name": "اسكالوب بانيه - بالجبن",
-      "price": "25,30",
+      "price": "35,30 ",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -258,7 +281,8 @@
       "image": "",
       "ingredients": "",
       "name": "فرايد تشيكن",
-      "price": "30",
+      "price": "35",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -268,7 +292,8 @@
       "image": "",
       "ingredients": "",
       "name": "اسكلوبيني",
-      "price": "30",
+      "price": "40",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -298,7 +323,8 @@
       "image": "",
       "ingredients": "",
       "name": "سوري زنجر",
-      "price": "35",
+      "price": "40",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -308,7 +334,8 @@
       "image": "",
       "ingredients": "",
       "name": "سوري مسحب",
-      "price": "35",
+      "price": "40",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -318,7 +345,8 @@
       "image": "",
       "ingredients": "",
       "name": "الفطيرة الذهبية",
-      "price": "35",
+      "price": "40",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -328,7 +356,8 @@
       "image": "",
       "ingredients": "",
       "name": "سوري مسحب بالباربكيو",
-      "price": "35",
+      "price": "40",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -348,7 +377,8 @@
       "image": "",
       "ingredients": "",
       "name": "بيتزا لحمة وسط",
-      "price": "25",
+      "price": "35",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -358,7 +388,8 @@
       "image": "",
       "ingredients": "",
       "name": "بيتزا شاورما وسط",
-      "price": "25",
+      "price": "35",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -378,7 +409,8 @@
       "image": "",
       "ingredients": "",
       "name": "بيتزا بالخضار",
-      "price": "20",
+      "price": "25",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -388,7 +420,8 @@
       "image": "",
       "ingredients": "",
       "name": "بيتزا مارجريتا",
-      "price": "18",
+      "price": "20",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -398,7 +431,8 @@
       "image": "",
       "ingredients": "",
       "name": "بيتزا بالتونة",
-      "price": "22",
+      "price": "30",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -408,7 +442,8 @@
       "image": "",
       "ingredients": "",
       "name": "كاليزوني دجاج",
-      "price": "30",
+      "price": "40",
+      "priceTw": "",
       "star": false,
       "visible": true
     },
@@ -911,6 +946,56 @@
       "price": "15",
       "star": false,
       "visible": true
+    },
+    "-OouWE7N2kAL_karlYCs": {
+      "categoryId": "-Olbwhqu1IZ8E-uRUJS7",
+      "createdAt": 1774803284677,
+      "image": "",
+      "ingredients": "",
+      "name": "سلطة روسية ",
+      "price": "5.10 ",
+      "star": false,
+      "visible": true
+    },
+    "-OouWVpb_i6uV5cy6470": {
+      "categoryId": "-OouWNpMULbazLumvTOq",
+      "createdAt": 1774803357207,
+      "image": "",
+      "ingredients": "كيلو لحمة بالخضار",
+      "name": "طاجن باللحمة",
+      "price": "150 ",
+      "star": false,
+      "visible": true
+    },
+    "-OouWeTG0IiIYYnkVqHT": {
+      "categoryId": "-OouWNpMULbazLumvTOq",
+      "createdAt": 1774803396674,
+      "image": "",
+      "ingredients": "متوفر بالدجاج او باللحمة",
+      "name": "فتة غزاوية",
+      "price": "150 ",
+      "star": false,
+      "visible": true
+    },
+    "-OouWq_hnAY_BSpuHSiw": {
+      "categoryId": "-OouWNpMULbazLumvTOq",
+      "createdAt": 1774803446301,
+      "image": "",
+      "ingredients": "كيلو لحم مدخن مع الأرز ",
+      "name": "لحم مدخن ",
+      "price": "150 ",
+      "star": false,
+      "visible": true
+    },
+    "-Op3AVmH3XvjA2Fb0Ri_": {
+      "categoryId": "-OouWNpMULbazLumvTOq",
+      "createdAt": 1774965361856,
+      "image": "",
+      "ingredients": "يتم التوصاية قبل بيوم علي الأصناف الشرقية ",
+      "name": "ملاطظة : ",
+      "price": "1",
+      "star": false,
+      "visible": true
     }
   },
   "settings": {
@@ -921,18 +1006,18 @@
       "inPhone": "",
       "outPhone": ""
     },
-    "complaintsWhatsapp": "",
+    "complaintsWhatsapp": "0597280280",
     "footerInfo": {
       "address": "تقاطع شارع الوحدة مع شارع الثورة",
-      "phone": "059xxxxxxx",
-      "whatsapp": "0097259xxxxxxx",
-      "facebook": "www.facebook.com",
-      "instagram": "www.instagram.com",
+      "phone": "0592830888",
+      "whatsapp": "00972592830888",
+      "facebook": "www.thailandy.com",
+      "instagram": "thailandi_gaza",
       "tiktok": "www.tiktok.com"
     }
   },
   "meta": {
     "version": "1.0",
-    "exportedAt": 1771272696754
+    "exportedAt": 1775051024689
   }
 }
