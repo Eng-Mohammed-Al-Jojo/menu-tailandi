@@ -9,14 +9,14 @@ interface Props {
 
 export default function CategorySection({ category, items, orderSystem }: Props) {
   return (
-    <section className="w-full px-2 md:px-0 py-8 flex flex-col animate-category-enter">
+    <section className="w-full px-2 md:px-0 py-5 md:py-6 flex flex-col animate-category-enter">
       {/* ===== Category Header ===== */}
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-5 md:mb-6">
         <div
           className="
             relative
             w-full max-w-full
-            px-8 py-3.5 md:py-4
+            px-8 py-2.5 md:py-3
             rounded-xl
             bg-[#60340e]
             elevation-3
@@ -33,8 +33,8 @@ export default function CategorySection({ category, items, orderSystem }: Props)
               font-[Cairo]
               font-bold
               text-[#F7F3E8]
-              text-lg md:text-2xl
-              tracking-wider
+              text-base md:text-xl
+              tracking-normal
               text-center
             "
           >

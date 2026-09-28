@@ -98,7 +98,7 @@ export default function Footer() {
         {/* ===== Right | Address & Phone ===== */}
         <div className="flex flex-col md:items-start items-center space-y-3 w-full md:w-auto text-[#F7F3E8]">
           {footer.address && (
-            <div className="flex items-center gap-2.5 text-base md:text-lg font-[Cairo] text-[#F7F3E8]">
+            <div className="flex items-center gap-2.5 text-sm md:text-[15px] font-[Cairo] text-[#F7F3E8]">
               <FaMapMarkerAlt className="text-lg shrink-0 text-[#C9A84C]" />
               <span className="text-center md:text-right text-[#F7F3E8]">{footer.address}</span>
             </div>
@@ -107,7 +107,7 @@ export default function Footer() {
           {footer.phone && (
             <a
               href={`tel:${footer.phone}`}
-              className="flex items-center gap-2 text-sm md:text-base font-[Cairo] hover:text-[#C9A84C] transition-colors"
+              className="flex items-center gap-2 text-[13px] md:text-sm font-[Cairo] hover:text-[#C9A84C] transition-colors"
             >
               <FaPhoneAlt className="text-xs text-[#C9A84C]" /> {footer.phone}
             </a>

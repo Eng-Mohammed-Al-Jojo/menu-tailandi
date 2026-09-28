@@ -69,7 +69,7 @@ export default function FeaturedModal({ show, onClose }: Props) {
         {/* Title Header */}
         <div className="flex items-center justify-center gap-2 mb-6">
           <FaStar className="text-[#C9A84C] w-5 h-5 animate-pulse" />
-          <h2 className="text-center text-xl md:text-2xl font-bold text-[#60340e] tracking-wide">
+          <h2 className="text-center text-lg md:text-xl font-bold text-[#60340e] tracking-normal">
             الأصناف الأكثر طلباً
           </h2>
           <FaStar className="text-[#C9A84C] w-5 h-5 animate-pulse" />
@@ -107,19 +107,19 @@ export default function FeaturedModal({ show, onClose }: Props) {
                 {/* Content */}
                 <div className="flex flex-col grow justify-between w-full">
                   <div>
-                    <h3 className="text-base md:text-lg font-bold text-[#60340e] mb-1.5 line-clamp-1">
+                    <h3 className="text-sm md:text-base font-bold text-[#60340e] mb-1.5 line-clamp-1">
                       {item.name}
                     </h3>
 
                     {item.description && (
-                      <p className="text-xs md:text-sm text-[#60340e]/70 font-light mb-3 line-clamp-2 leading-relaxed">
+                      <p className="text-[11px] md:text-xs text-[#60340e]/70 font-light mb-3 line-clamp-2 leading-relaxed">
                         {item.description}
                       </p>
                     )}
                   </div>
 
                   <div className="mt-2 pt-2 border-t border-[#60340e]/10 flex items-center justify-center">
-                    <span className="px-3 py-1 bg-[#60340e] text-[#F7F3E8] rounded-md text-sm md:text-base font-bold shadow-xs">
+                    <span className="px-3 py-1 bg-[#60340e] text-[#F7F3E8] rounded-md text-[13px] md:text-sm font-bold shadow-xs">
                       {item.price}₪
                     </span>
                   </div>

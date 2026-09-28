@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { db } from "../../firebase";
 import { ref, onValue } from "firebase/database";
 import CategorySection from "./CategorySection";
+import Slogan from "./Slogan";
 
 /* ================= Types ================= */
 export interface Category {
@@ -21,6 +22,7 @@ export interface Item {
   categoryId: string;
   visible?: boolean;
   star?: boolean;
+  image?: string;
   createdAt?: number;
 }
 
@@ -291,15 +293,13 @@ export default function Menu({ onLoadingChange, onFeaturedCheck }: Props) {
             />
           </div>
 
-          <h2 className="text-2xl md:text-3xl font-extrabold tracking-wider text-[#60340e]">
+          <h2 className="text-xl md:text-2xl font-bold tracking-normal text-[#60340e]">
             مطعم التايلندي
           </h2>
 
           <div className="w-16 h-[2px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent my-4" />
 
-          <p className="text-[#60340e]/80 text-base md:text-lg font-[Cairo] text-center">
-            نكهات تعود .. ذكريات تتجدد
-          </p>
+          <Slogan large />
         </div>
       </div>
     );
@@ -311,7 +311,7 @@ export default function Menu({ onLoadingChange, onFeaturedCheck }: Props) {
       {/* ===== Toast Distinction ===== */}
       {toast && (
         <div
-          className={`fixed top-6 right-6 px-5 py-3 rounded-2xl font-bold shadow-2xl z-40 text-white transition-all duration-300 animate-toast-show flex items-center gap-2 ${toast.color === "green"
+          className={`fixed top-4 left-1/2 -translate-x-1/2 px-4 py-2 rounded-xl text-xs md:text-[13px] font-bold shadow-2xl z-[60] text-white transition-all duration-300 animate-toast-drop flex items-center gap-2 ${toast.color === "green"
             ? "bg-[#2D6A4F]"
             : toast.color === "amber"
               ? "bg-[#B45309]"
@@ -344,7 +344,7 @@ export default function Menu({ onLoadingChange, onFeaturedCheck }: Props) {
                 shrink-0 snap-center
                 px-4 py-2 sm:px-5 sm:py-2.5
                 rounded-full whitespace-nowrap
-                font-medium text-xs sm:text-sm
+                font-medium text-[11px] sm:text-xs
                 transition-all duration-300 ease-out
                 flex items-center gap-1.5
                 ${activeCatId === "all"
@@ -375,7 +375,7 @@ export default function Menu({ onLoadingChange, onFeaturedCheck }: Props) {
                     shrink-0 snap-center
                     px-4 py-2 sm:px-5 sm:py-2.5
                     rounded-full whitespace-nowrap
-                    text-xs sm:text-sm
+                    text-[11px] sm:text-xs
                     transition-all duration-300 ease-out
                     flex items-center gap-1.5
                     ${isActive

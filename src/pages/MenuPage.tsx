@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Footer from "../components/menu/footer";
 import Menu from "../components/menu/Menu";
+import Slogan from "../components/menu/Slogan";
 import { FaFire } from "react-icons/fa";
 import FeaturedModal from "../components/menu/FeaturedModal";
 
@@ -16,31 +17,38 @@ export default function MenuPage() {
     >
       {/* Content */}
       <div className="relative z-10 flex flex-col min-h-screen">
-        {/* Header Hero — Logo مع خطوط تباين راقية */}
-        <header className="flex items-center justify-center w-full py-8 md:py-10 px-4 max-w-5xl mx-auto">
-          {/* خط يسار رفيع متلاشٍ */}
-          <div className="grow h-[2px] bg-gradient-to-r from-transparent via-[#60340e]/40 to-[#60340e]/15 rounded-full" />
+        {/* Header Hero — Logo مع خطوط تباين راقية + سلوجان */}
+        <header className="flex flex-col items-center justify-center w-full pt-6 md:pt-8 pb-4 md:pb-5 px-3 max-w-5xl mx-auto">
+          <div className="flex items-center justify-center w-full">
+            {/* خط يسار رفيع متلاشٍ */}
+            <div className="grow h-[2px] bg-gradient-to-r from-transparent via-[#60340e]/40 to-[#60340e]/15 rounded-full" />
 
-          {/* اللوجو */}
-          <img
-            src="/logo.png"
-            alt="مطعم التايلندي"
-            className="
-              mx-4 md:mx-8
-              w-44 md:w-52
-              object-contain
-              drop-shadow-[0_8px_24px_rgba(96,52,14,0.25)]
-              animate-logo-float
-              z-10
-            "
-          />
+            {/* اللوجو — حجم أصغر قليلاً */}
+            <img
+              src="/logo.png"
+              alt="مطعم التايلندي"
+              className="
+                mx-4 md:mx-8
+                w-32 md:w-40
+                object-contain
+                drop-shadow-[0_8px_24px_rgba(96,52,14,0.25)]
+                animate-logo-float
+                z-10
+              "
+            />
 
-          {/* خط يمين رفيع متلاشٍ */}
-          <div className="grow h-[2px] bg-gradient-to-l from-transparent via-[#60340e]/40 to-[#60340e]/15 rounded-full" />
+            {/* خط يمين رفيع متلاشٍ */}
+            <div className="grow h-[2px] bg-gradient-to-l from-transparent via-[#60340e]/40 to-[#60340e]/15 rounded-full" />
+          </div>
+
+          {/* السلوجان الفخم أسفل اللوجو */}
+          <div className="mt-2.5 md:mt-3">
+            <Slogan />
+          </div>
         </header>
 
-        {/* Main Menu Component */}
-        <div className="flex-1 w-full px-4 md:px-8">
+        {/* Main Menu Component — بادنج جانبي مخفف */}
+        <div className="flex-1 w-full px-2.5 md:px-5">
           <Menu
             onLoadingChange={setLoading}
             onFeaturedCheck={setHasFeatured}
